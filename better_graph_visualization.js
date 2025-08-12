@@ -1,5 +1,3 @@
-import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
-
 //Width and height
 var w = d3.select("body").node().getBoundingClientRect().width;
 var h = window.innerHeight;
@@ -28,7 +26,7 @@ var offset = [0,0];
 var scale = 0.25;
 
 
-var graph_simulation = d3.json("https://www.lucasgover.com/MovieRecommender/movie_graph.json", function(dataset){
+var graph_simulation = d3.json("./movie_graph.json", function(dataset){
         //Initialize a simple force layout, using the nodes and edges in dataset
     var force = d3.forceSimulation(dataset.nodes)
                     .force("charge", d3.forceManyBody().strength(-60))
